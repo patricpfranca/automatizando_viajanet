@@ -1,4 +1,5 @@
 search_pages = SearchPages.new
+fly_pages = FlysPages.new
 
 Dado("que acesso o site da ViajaNet") do
   visit '/'
@@ -12,7 +13,8 @@ Quando("preencho os campos obrigatórios e realizo a busca") do
 end
 
 Então("escolho o voo e clico em comprar") do
-  pending # Write code here that turns the phrase above into concrete actions
+  fly_pages.choose_fly
+  fly_pages.purchase_button
 end
 
 Então("preencho os dados do passageiro e forma de pagamento") do
