@@ -1,5 +1,6 @@
 search_pages = SearchPages.new
 fly_pages = FlysPages.new
+payment_data = PaymentData.new
 
 Dado("que acesso o site da ViajaNet") do
   visit '/'
@@ -17,14 +18,14 @@ Então("escolho o voo e clico em comprar") do
   fly_pages.purchase_button
 end
 
-Então("preencho os dados do passageiro e forma de pagamento") do
-  pending # Write code here that turns the phrase above into concrete actions
+Então("preencho os dados do passageiro e forma de pagamento") do |data|
+  payment_data.registration_passenger(data.hashes.first)
 end
 
 Quando("finalizo a compra") do
-  pending # Write code here that turns the phrase above into concrete actions
+  payment_data.complete
 end
 
-Então("devo visualizar a mensagem {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Então("devo visualizar a mensagem {string}") do |msg|
+  payment_data.message(msg)
 end

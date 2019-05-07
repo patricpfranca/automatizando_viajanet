@@ -8,4 +8,4 @@ Capybara.configure do |config|
   config.app_host = 'https://www.viajanet.com.br'
 end
 
-Capybara.default_max_wait_time = 5
+Capybara.default_max_wait_time = 15

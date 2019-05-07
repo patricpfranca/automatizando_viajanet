@@ -16,7 +16,7 @@ class SearchPages
     find('#departureDate').click
     dateStart = dateStart.gsub("/", "")
     find(".pika-table tr td .btn-#{dateStart}").click
-    
+    sleep 1
     find('#arrivalDate').click
     dateEnd = dateEnd.gsub("/", "")
     find(".pika-table tr td .btn-#{dateEnd}").click
@@ -49,6 +49,4 @@ class SearchPages
       find('li', text: value).click
     end
   end
-  
-  
 end
